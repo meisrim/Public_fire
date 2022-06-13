@@ -1,0 +1,50 @@
+import decimal
+from decimal import Decimal
+
+pradinis = 1000
+#float(input("Pirmine investuojama suma: "))
+pastovi = 500
+#float(input("Menesine investicija: "))
+metai = 22
+#int(input("Kiek metu taupysi? "))
+graza = 10
+#float(input("Laukiama graza: "))
+FYRE_men = 1500
+#float(input("Kokios tavo menesines islaidos? "))
+#print("Pradine investicija " + str(pradinis))
+#print("Kiekviena menesi inesi " + str(pastovi))
+#print("Is viso taupysi " + str(metai) + " metu.")
+#print("Manai, jog pavyks pliusinti " + str(graza) + "% per metus.")
+
+galutine_suma = 0.0
+menesiai = 12
+panaudojama_FYRE = 0.04 # 0.04 yra 4%
+
+#Bendros galutines sumos apskaiciavimas
+pradinis_g = pradinis
+for year in range(metai):
+    galutine_suma = pradinis_g  +pastovi*menesiai + (pradinis_g+pastovi*menesiai)*graza/100
+    pradinis_g = galutine_suma
+
+galutine_suma_dec = round(galutine_suma,2)
+print("Po " + str(metai) + " metu busi sutaupes " + str(galutine_suma_dec))
+
+#FYRE 
+FYRE_goal = (FYRE_men*menesiai)/panaudojama_FYRE
+print("Kaip tikras FYREistas turi sutaupyti: " + str(FYRE_goal))
+
+#Reikalingi metai tapti FYRE
+sukaupta = 0
+pradinis_f = pradinis
+fyre_year = 0
+Tado_skaicius = 100
+
+for year in range(99):
+  while sukaupta < FYRE_goal:
+    sukaupta = (pradinis_f + pastovi * menesiai) + (pradinis_f + pastovi * menesiai) * graza / 100
+    pradinis_f = sukaupta
+    fyre_year +=1
+# for year in range(metai):
+#     galutine_suma = pradinis_g  +pastovi*menesiai + (pradinis_g+pastovi*menesiai)*graza/100
+#     pradinis_g = galutine_suma
+print("FYRE " + str(fyre_year))

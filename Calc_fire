@@ -38,4 +38,8 @@ while sukaupta < FYRE_goal:
   sukaupta = (pradinis_f + pastovi * menesiai) + (pradinis_f + pastovi * menesiai) * graza / 100
   pradinis_f = sukaupta
   fyre_year +=1
-print("Is investiciju grazos galetum gyventi po " + str(fyre_year) + " metu.")
+
+if fyre_year > 30:
+  print("Is investiciju grazos galetum gyventi kitame gyvenime")
+else:
+  print("Is investiciju grazos galetum gyventi po " + str(fyre_year) + " metu.")

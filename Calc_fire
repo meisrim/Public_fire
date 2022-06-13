@@ -1,20 +1,16 @@
 import decimal
 from decimal import Decimal
 
-pradinis = 1000
-#float(input("Pirmine investuojama suma: "))
-pastovi = 500
-#float(input("Menesine investicija: "))
-metai = 22
-#int(input("Kiek metu taupysi? "))
-graza = 10
-#float(input("Laukiama graza: "))
-FYRE_men = 1500
-#float(input("Kokios tavo menesines islaidos? "))
-#print("Pradine investicija " + str(pradinis))
-#print("Kiekviena menesi inesi " + str(pastovi))
-#print("Is viso taupysi " + str(metai) + " metu.")
-#print("Manai, jog pavyks pliusinti " + str(graza) + "% per metus.")
+print("Nori būti FIRE?")
+pradinis = float(input("Periodo pradzioje investuojama suma: "))
+pastovi = float(input("Menesine investicija kiekviena menesi: "))
+metai = int(input("Kiek metu kas menesi investuosi? "))
+graza = float(input("Tiketina graza: "))
+FYRE_men = float(input("Kokio dydzio islaidas turetu padengti graza? "))
+print("Pradine investicija " + str(pradinis))
+print("Kiekviena menesi inesi " + str(pastovi))
+print("Is viso taupysi " + str(metai) + " metu.")
+print("Manai, jog pavyks pliusinti " + str(graza) + "% per metus.")
 
 galutine_suma = 0.0
 menesiai = 12
@@ -38,12 +34,8 @@ sukaupta = 0
 pradinis_f = pradinis
 fyre_year = 0
 
-for year in range(99):
-  while sukaupta < FYRE_goal:
-    sukaupta = (pradinis_f + pastovi * menesiai) + (pradinis_f + pastovi * menesiai) * graza / 100
-    pradinis_f = sukaupta
-    fyre_year +=1
-# for year in range(metai):
-#     galutine_suma = pradinis_g  +pastovi*menesiai + (pradinis_g+pastovi*menesiai)*graza/100
-#     pradinis_g = galutine_suma
-print("FYRE " + str(fyre_year))
+while sukaupta < FYRE_goal:
+  sukaupta = (pradinis_f + pastovi * menesiai) + (pradinis_f + pastovi * menesiai) * graza / 100
+  pradinis_f = sukaupta
+  fyre_year +=1
+print("Is investiciju grazos galetum gyventi po " + str(fyre_year) + " metu.")

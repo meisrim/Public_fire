@@ -37,7 +37,6 @@ print("Kaip tikras FYREistas turi sutaupyti: " + str(FYRE_goal))
 sukaupta = 0
 pradinis_f = pradinis
 fyre_year = 0
-Tado_skaicius = 100
 
 for year in range(99):
   while sukaupta < FYRE_goal:
